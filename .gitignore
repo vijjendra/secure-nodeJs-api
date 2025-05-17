@@ -1,0 +1,6 @@
+node_modules/ 
+logs/
+#Dockerfile
+#Jenkinsfile
+dist/ 
+node_modules
