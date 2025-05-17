@@ -1,4 +1,4 @@
-# Secure Node.js API
+# Secure Node.js Web API
 
 A robust and secure Node.js API built with TypeScript, Express.js, and MongoDB, implementing best practices for security, authentication, and scalability.
 
