@@ -40,7 +40,7 @@ A robust and secure Node.js API built with TypeScript, Express.js, and MongoDB, 
    PORT=3000
    ENVIRONMENT=development # Options: development, production, test
    API_VERSION=v1
-   WEBSITE_URL=http://localhost:3000
+   WEBSITE_URL=http://localhost:5000
 
    # Database Configuration
    CONNECTION_STRING=mongodb://localhost:27017/your_database_name
@@ -66,7 +66,7 @@ A robust and secure Node.js API built with TypeScript, Express.js, and MongoDB, 
 - **PORT**: Server port number (default: 3000)
 - **ENVIRONMENT**: Application environment (options: development, production, test)
 - **API_VERSION**: API version for URL routing (default: v1)
-- **WEBSITE_URL**: Website URL (default: http://localhost:3000)
+- **WEBSITE_URL**: Website URL (default: http://localhost:5000)
 
 #### Database Configuration
 - **CONNECTION_STRING**: MongoDB connection string

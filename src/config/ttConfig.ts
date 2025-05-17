@@ -16,7 +16,7 @@ const JwtConfigSchema = z.object({
 const ConfigSchema = z.object({
   PORT: z.number().default(3000),
   ENVIRONMENT: z.enum(["development", "production", "test"]).default("production"),
-  WEBSITE_URL: z.string().url().default("https://www.transtutors.com/"),
+  WEBSITE_URL: z.string().url().default("http://localhost:5000/"),
   API_VERSION: z.string().default(""),
   dbConnectionString: z.string().min(1),
   BEARER_ACCESS_TOKEN: z.string().min(1),
@@ -64,7 +64,7 @@ class ConfigurationManager {
             "ENVIRONMENT",
             "development"
           )) as Config["ENVIRONMENT"],
-      WEBSITE_URL: this.getEnvVariable("WEBSITE_URL", "http://localhost:3000"),
+      WEBSITE_URL: this.getEnvVariable("WEBSITE_URL", "http://localhost:5000/"),
       API_VERSION: this.getEnvVariable("API_VERSION", "v1"),
       dbConnectionString: this.getEnvVariable(
         "CONNECTION_STRING",
