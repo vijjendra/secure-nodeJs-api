@@ -36,10 +36,68 @@ A robust and secure Node.js API built with TypeScript, Express.js, and MongoDB, 
 
 3. Create a `.env` file in the root directory and add your environment variables:
    ```env
+   # Server Configuration
    PORT=3000
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
+   ENVIRONMENT=development # Options: development, production, test
+   API_VERSION=v1
+   WEBSITE_URL=http://localhost:3000
+
+   # Database Configuration
+   CONNECTION_STRING=mongodb://localhost:27017/your_database_name
+
+   # Authentication Configuration
+   BEARER_ACCESS_TOKEN=your_bearer_token
+   HMACAUTH_SECRET_KEY=your_hmac_secret_key
+   HMAC_TOKEN_EXPIRYIN=5m
+
+   # JWT Configuration
+   JWT_ACCESS_TOKEN_SECERT=your_jwt_access_token_secret
+   JWT_REFRESH_TOKEN_SECERT=your_jwt_refresh_token_secret
+   JWT_ACCESS_TOKEN_EXPIRYIN=1h
+   JWT_REFRESH_TOKEN_EXPIRYIN=7d
+
+   # Cookie Configuration
+   ENABLE_COOKIES=false
    ```
+
+### Environment Variables Description
+
+#### Server Configuration
+- **PORT**: Server port number (default: 3000)
+- **ENVIRONMENT**: Application environment (options: development, production, test)
+- **API_VERSION**: API version for URL routing (default: v1)
+- **WEBSITE_URL**: Website URL (default: http://localhost:3000)
+
+#### Database Configuration
+- **CONNECTION_STRING**: MongoDB connection string
+  - Format: `mongodb://[username:password@]host[:port]/database_name`
+  - Example: `mongodb://localhost:27017/your_database_name`
+
+#### Authentication Configuration
+- **BEARER_ACCESS_TOKEN**: Token for bearer authentication
+  - Used for API authentication using Bearer token scheme
+- **HMACAUTH_SECRET_KEY**: Secret key for HMAC authentication
+  - Used for generating and validating HMAC signatures
+- **HMAC_TOKEN_EXPIRYIN**: HMAC token expiry time (default: 5m)
+  - Supports time units: s (seconds), m (minutes), h (hours), d (days)
+
+#### JWT Configuration
+- **JWT_ACCESS_TOKEN_SECERT**: Secret for JWT access tokens
+  - Used to sign and verify access tokens
+  - Should be a strong, unique secret key
+- **JWT_REFRESH_TOKEN_SECERT**: Secret for JWT refresh tokens
+  - Used to sign and verify refresh tokens
+  - Should be different from access token secret
+- **JWT_ACCESS_TOKEN_EXPIRYIN**: Access token expiry time (default: 1h)
+  - Supports time units: s (seconds), m (minutes), h (hours), d (days)
+- **JWT_REFRESH_TOKEN_EXPIRYIN**: Refresh token expiry time (default: 7d)
+  - Typically set to a longer duration than access token
+  - Supports time units: s (seconds), m (minutes), h (hours), d (days)
+
+#### Cookie Configuration
+- **ENABLE_COOKIES**: Enable/disable cookie functionality (default: false)
+  - Set to 'true' to enable cookie-based authentication
+  - Set to 'false' to use only token-based authentication
 
 ## Running the Application
 
